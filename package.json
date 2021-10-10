@@ -1,0 +1,14 @@
+{
+    "name": "laboulangeriefront",
+    "version": "1.0.0",
+    "description": "laboulangerie.net front end",
+    "main": "",
+    "scripts": {
+        "dev": "sass --watch src/scss:dist/css"
+    },
+    "author": "PainOchoco",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.42.1"
+    }
+}

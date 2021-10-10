@@ -1,0 +1,49 @@
+header {
+    height: 100vh;
+    background-image: linear-gradient(
+            to bottom,
+            rgba(78, 89, 140, 0.35) 0%,
+            colors.$purple-navy 100%
+        ),
+        url("../../dist/assets/images/backgrounds/0.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .container {
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+        gap: max(3vh, 50px);
+
+        .icon {
+            width: max(25%, 175px);
+        }
+
+        .title {
+            width: max(50%, 300px);
+        }
+
+        .subtitle {
+            color: colors.$lavender-blue;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-evenly;
+            min-width: 100%;
+            padding: 0 max(10vw, 50px);
+            .icon {
+                width: min(10vw, 40px);
+                color: colors.$lavender-blue;
+            }
+        }
+    }
+}

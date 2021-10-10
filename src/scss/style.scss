@@ -1,0 +1,30 @@
+@use "abstracts/colors";
+@use "abstracts/fonts";
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    h1 {
+        font-family: Alagard;
+        font-weight: normal;
+    }
+
+    h2 {
+        font-family: Minercraftory;
+        text-transform: uppercase;
+        letter-spacing: 0.69em;
+        font-weight: normal;
+    }
+
+    p {
+        font-family: Poppins;
+        font-weight: normal;
+    }
+}
+
+@import "components/header";
