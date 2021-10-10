@@ -1,5 +1,5 @@
 header {
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(
             to bottom,
             rgba(78, 89, 140, 0.35) 0%,
@@ -18,7 +18,7 @@ header {
 
         align-items: center;
         justify-content: center;
-        gap: max(3vh, 50px);
+        gap: max(5vh, 20px);
 
         .icon {
             width: max(25%, 175px);
@@ -37,7 +37,7 @@ header {
 
         .icons {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
             min-width: 100%;
             padding: 0 max(10vw, 50px);
             .icon {

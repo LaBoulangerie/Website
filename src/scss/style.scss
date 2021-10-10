@@ -5,6 +5,7 @@
 *::after,
 *::before {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -28,3 +29,5 @@ body {
 }
 
 @import "components/header";
+@import "components/nav";
+@import "components/infos";

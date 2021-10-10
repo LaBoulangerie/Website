@@ -20,6 +20,7 @@
 *::after,
 *::before {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -39,7 +40,7 @@ body p {
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(78, 89, 140, 0.35) 0%, #4e598c 100%), url("../../dist/assets/images/backgrounds/0.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,7 +52,7 @@ header .container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: max(3vh, 50px);
+  gap: max(5vh, 20px);
 }
 header .container .icon {
   width: max(25%, 175px);
@@ -67,13 +68,150 @@ header .container .subtitle {
 }
 header .container .icons {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   min-width: 100%;
   padding: 0 max(10vw, 50px);
 }
 header .container .icons .icon {
   width: min(10vw, 40px);
   color: #e4d9ff;
+}
+
+.nav-container {
+  background-color: #4e598c;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 69;
+  width: 100%;
+}
+.nav-container .nav-icon {
+  margin: auto 0;
+  height: 3rem;
+}
+.nav-container .nav-toggle {
+  display: none;
+}
+.nav-container .nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-container .nav-toggle-label span,
+.nav-container .nav-toggle-label span::before,
+.nav-container .nav-toggle-label span::after {
+  display: block;
+  background: #e4d9ff;
+  height: 3px;
+  width: 2em;
+  border-radius: 1px;
+  position: relative;
+}
+.nav-container .nav-toggle-label span::before,
+.nav-container .nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+.nav-container .nav-toggle-label span::before {
+  bottom: 7px;
+  width: 1.5em;
+}
+.nav-container .nav-toggle-label span::after {
+  top: 7px;
+  width: 1em;
+}
+.nav-container nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: #4e598c;
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+.nav-container ul {
+  list-style: none;
+}
+.nav-container ul li {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.nav-container ul li a {
+  color: #e4d9ff;
+  letter-spacing: 0.3em;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: Minercraftory;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+.nav-container ul li a:hover {
+  color: #f9c784;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-container {
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+  .nav-container .nav-toggle-label {
+    display: none;
+  }
+  .nav-container .nav-icon {
+    grid-column: 2/3;
+  }
+  .nav-container nav {
+    all: unset;
+    grid-column: 3/4;
+    margin: auto;
+    width: 100%;
+  }
+  .nav-container nav ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .nav-container nav ul li {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .nav-container nav ul li a {
+    opacity: 1;
+    position: relative;
+  }
+  .nav-container nav ul li a:hover::after {
+    transform: scale(1, 1);
+  }
+  .nav-container nav ul li a::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background: #f9c784;
+    bottom: 0;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform ease-in-out 250ms;
+  }
+}
+.infos {
+  min-height: 200vh;
+  background-color: gray;
 }
 
 /*# sourceMappingURL=style.css.map */
