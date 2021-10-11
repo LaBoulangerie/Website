@@ -14,7 +14,15 @@
 
 @font-face {
     font-family: Poppins;
-    src: url("../../../dist/assets/fonts/Poppins.ttf") format("truetype");
+    src: url("../../../dist/assets/fonts/Poppins-Regular.ttf")
+        format("truetype");
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../../../dist/assets/fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: bold;
     font-style: normal;
 }
