@@ -160,7 +160,7 @@ header .container .icons .icon {
   transition: opacity 150ms ease-in-out;
 }
 .nav-container ul li a:hover {
-  color: #f9c784;
+  color: #fcaf58;
 }
 
 .nav-toggle:checked ~ nav {
@@ -208,7 +208,7 @@ header .container .icons .icon {
     content: "";
     display: block;
     height: 5px;
-    background: #f9c784;
+    background: #fcaf58;
     bottom: 0;
     transform: scale(0, 1);
     transform-origin: left;

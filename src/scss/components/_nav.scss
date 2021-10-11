@@ -83,7 +83,7 @@
                 transition: opacity 150ms ease-in-out;
 
                 &:hover {
-                    color: colors.$gold-crayola;
+                    color: colors.$yellow-orange;
                 }
             }
         }
@@ -142,7 +142,7 @@
                             content: "";
                             display: block;
                             height: 5px;
-                            background: colors.$gold-crayola;
+                            background: colors.$yellow-orange;
                             bottom: 0;
                             transform: scale(0, 1);
                             transform-origin: left;
