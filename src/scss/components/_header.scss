@@ -30,7 +30,8 @@ header {
 
         .subtitle {
             color: colors.$lavender-blue;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: clamp(1rem, 2.5vw, 1.7rem);
+            letter-spacing: 0.69em;
             padding: 0 1rem;
             text-align: center;
         }
