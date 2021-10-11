@@ -12,8 +12,14 @@
 }
 @font-face {
   font-family: Poppins;
-  src: url("../../../dist/assets/fonts/Poppins.ttf") format("truetype");
+  src: url("../../../dist/assets/fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("../../../dist/assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
   font-style: normal;
 }
 *,
@@ -31,7 +37,6 @@ body h1 {
 body h2 {
   font-family: Minercraftory;
   text-transform: uppercase;
-  letter-spacing: 0.69em;
   font-weight: normal;
 }
 body p {
@@ -62,7 +67,8 @@ header .container .title {
 }
 header .container .subtitle {
   color: #e4d9ff;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2.5vw, 1.7rem);
+  letter-spacing: 0.69em;
   padding: 0 1rem;
   text-align: center;
 }
@@ -88,7 +94,7 @@ header .container .icons .icon {
 }
 .nav-container .nav-icon {
   margin: auto 0;
-  height: 3rem;
+  height: 2rem;
 }
 .nav-container .nav-toggle {
   display: none;
@@ -210,8 +216,68 @@ header .container .icons .icon {
   }
 }
 .infos {
-  min-height: 200vh;
-  background-color: gray;
+  background-color: #e4d9ff;
+  padding: 5% 10%;
+}
+.infos .title {
+  color: #ff8c42;
+  font-size: 3rem;
+}
+.infos .title::after {
+  content: "";
+  display: block;
+  margin-top: 3px;
+  height: 7px;
+  width: 4ch;
+  background: #4e598c;
+}
+.infos .container {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.infos .container .desc-container {
+  color: #4e598c;
+}
+.infos .container .desc-container p {
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
+  line-height: clamp(1.4rem, -0.875rem + 8.333vw, 1.7rem);
+  margin: 2rem 0;
+}
+.infos .container .box {
+  cursor: pointer;
+  background-color: #4e598c;
+  color: #ff8c42;
+  padding: 1rem 2rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
+  text-align: center;
+  box-shadow: 1rem 1rem #ff8c42;
+  transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.infos .container .box:hover {
+  box-shadow: -1rem -1rem #ff8c42;
+  transform: scale(1.1, 1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .infos .container {
+    flex-wrap: nowrap;
+    gap: 4rem;
+  }
+  .infos .container .desc-container {
+    flex: 32ch;
+  }
+  .infos .container .box-container {
+    flex: clamp(25%, -0.875rem + 8.333vw, 40%);
+  }
+  .infos .container .box-container .box {
+    width: fit-content;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

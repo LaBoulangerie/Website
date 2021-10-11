@@ -1,5 +1,77 @@
-// just to test the navbar for now
 .infos {
-    min-height: 200vh;
-    background-color: gray;
+    background-color: colors.$lavender-blue;
+    padding: 5% 10%;
+
+    .title {
+        color: colors.$mango-tango;
+        font-size: 3rem;
+
+        &::after {
+            content: "";
+            display: block;
+            margin-top: 3px;
+            height: 7px;
+            width: 4ch;
+            background: colors.$purple-navy;
+        }
+    }
+    .container {
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .desc-container {
+            color: colors.$purple-navy;
+
+            p {
+                // actually neat values !
+                font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
+                line-height: clamp(1.4rem, -0.875rem + 8.333vw, 1.7rem);
+                margin: 2rem 0;
+            }
+        }
+
+        .box {
+            cursor: pointer;
+            background-color: colors.$purple-navy;
+            color: colors.$mango-tango;
+            padding: 1rem 2rem;
+            margin: auto;
+            margin-bottom: 1rem;
+
+            font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
+            text-align: center;
+
+            box-shadow: 1rem 1rem colors.$mango-tango;
+            transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            &:hover {
+                box-shadow: -1rem -1rem colors.$mango-tango;
+                transform: scale(1.1, 1.1);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .infos {
+        .container {
+            flex-wrap: nowrap;
+            gap: 4rem;
+
+            .desc-container {
+                flex: 32ch;
+            }
+
+            .box-container {
+                flex: clamp(25%, -0.875rem + 8.333vw, 40%);
+                .box {
+                    width: fit-content;
+                }
+            }
+        }
+    }
 }
