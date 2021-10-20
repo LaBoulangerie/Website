@@ -1,0 +1,52 @@
+.stats {
+    background-color: colors.$mango-tango;
+    .title {
+        color: colors.$purple-navy;
+        text-align: right;
+        &::after {
+            right: 0;
+        }
+    }
+
+    .container {
+        margin-top: 10%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+        gap: max(5vh, 40px);
+
+        .box {
+            background-color: colors.$lavender-blue;
+            padding: 1rem 2rem;
+
+            box-shadow: 1rem 1rem colors.$purple-navy;
+
+            text-align: center;
+            font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
+
+            h2 {
+                color: colors.$purple-navy;
+            }
+
+            p {
+                font-family: Minercraftory;
+                color: colors.$mango-tango;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .stats {
+        .container {
+            flex-direction: row;
+            gap: max(6vh, 80px);
+            .box {
+                width: 30vw;
+            }
+        }
+    }
+}

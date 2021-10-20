@@ -43,6 +43,23 @@ body p {
   font-family: Poppins;
   font-weight: normal;
 }
+body section {
+  padding: 5% 10%;
+}
+
+.title {
+  font-size: 3rem;
+  position: relative;
+}
+.title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  height: 7px;
+  width: 4ch;
+  background: #4e598c;
+}
 
 header {
   min-height: 100vh;
@@ -226,15 +243,6 @@ header .container .icons .icon:hover {
 }
 .infos .title {
   color: #ff8c42;
-  font-size: 3rem;
-}
-.infos .title::after {
-  content: "";
-  display: block;
-  margin-top: 3px;
-  height: 7px;
-  width: 4ch;
-  background: #4e598c;
 }
 .infos .container {
   padding-top: 1rem;
@@ -282,6 +290,64 @@ header .container .icons .icon:hover {
   }
   .infos .container .box-container .box {
     width: fit-content;
+  }
+}
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.upper_waves {
+  background-image: url("../assets/images/spacers/nice_waves_upper.svg");
+}
+
+.lower_waves {
+  background-image: url("../assets/images/spacers/nice_waves_lower.svg");
+}
+
+.stats {
+  background-color: #ff8c42;
+}
+.stats .title {
+  color: #4e598c;
+  text-align: right;
+}
+.stats .title::after {
+  right: 0;
+}
+.stats .container {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: max(5vh, 40px);
+}
+.stats .container .box {
+  background-color: #e4d9ff;
+  padding: 1rem 2rem;
+  box-shadow: 1rem 1rem #4e598c;
+  text-align: center;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
+}
+.stats .container .box h2 {
+  color: #4e598c;
+}
+.stats .container .box p {
+  font-family: Minercraftory;
+  color: #ff8c42;
+}
+
+@media screen and (min-width: 768px) {
+  .stats .container {
+    flex-direction: row;
+    gap: max(6vh, 80px);
+  }
+  .stats .container .box {
+    width: 30vw;
   }
 }
 

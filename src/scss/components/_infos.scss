@@ -4,17 +4,8 @@
 
     .title {
         color: colors.$mango-tango;
-        font-size: 3rem;
-
-        &::after {
-            content: "";
-            display: block;
-            margin-top: 3px;
-            height: 7px;
-            width: 4ch;
-            background: colors.$purple-navy;
-        }
     }
+
     .container {
         padding-top: 1rem;
         display: flex;
