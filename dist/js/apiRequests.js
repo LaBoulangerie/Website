@@ -1,13 +1,13 @@
 const getPlayersSize = async () => {
-    return (await fetch("http://api.lblg.cc/players")).length;
+    return (await (await fetch("http://api.lblg.cc/players")).json()).length;
 };
 
 const getTownsSize = async () => {
-    return (await fetch("http://api.lblg.cc/towns")).length;
+    return (await (await fetch("http://api.lblg.cc/towns")).json()).length;
 };
 
 const getNationsSize = async () => {
-    return (await fetch("http://api.lblg.cc/nations")).length;
+    return (await (await fetch("http://api.lblg.cc/nations")).json()).length;
 };
 
 export { getPlayersSize, getTownsSize, getNationsSize };

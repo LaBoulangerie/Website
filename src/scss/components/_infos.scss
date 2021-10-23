@@ -54,11 +54,11 @@
             gap: 4rem;
 
             .desc-container {
-                flex: 32ch;
+                width: 50%;
             }
 
             .box-container {
-                flex: clamp(25%, -0.875rem + 8.333vw, 40%);
+                width: 50%;
                 .box {
                     width: fit-content;
                 }

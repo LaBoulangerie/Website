@@ -16,7 +16,7 @@
 
         align-items: center;
         justify-content: center;
-        gap: max(5vh, 40px);
+        gap: 2rem;
 
         .box {
             background-color: colors.$lavender-blue;
@@ -25,14 +25,15 @@
             box-shadow: 1rem 1rem colors.$purple-navy;
 
             text-align: center;
-            font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
 
             h2 {
+                font-size: clamp(2rem, -1.75rem + 16.666vw, 3.4rem);
                 color: colors.$purple-navy;
             }
 
             p {
                 font-family: Minercraftory;
+                font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
                 color: colors.$mango-tango;
             }
         }
@@ -43,9 +44,9 @@
     .stats {
         .container {
             flex-direction: row;
-            gap: max(6vh, 80px);
+            gap: 9%;
             .box {
-                width: 30vw;
+                width: 30%;
             }
         }
     }
