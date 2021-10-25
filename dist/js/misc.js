@@ -23,4 +23,9 @@ const generateProfile = async (uuid) => {
     return profileDiv;
 };
 
-export { generateProfile };
+const copyAddress = () => {
+    const adressEl = document.getElementById("adress");
+    navigator.clipboard.readText().then((clipText) => alert(clipText));
+};
+
+export { generateProfile, copyAddress };

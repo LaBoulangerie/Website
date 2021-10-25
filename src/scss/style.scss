@@ -24,10 +24,11 @@ body {
     p {
         font-family: Poppins;
         font-weight: normal;
+        font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
     }
 
     section {
-        padding: 5% 10%;
+        padding: 5% 15%;
     }
 }
 
@@ -52,3 +53,4 @@ body {
 @import "components/spacers";
 @import "components/stats";
 @import "components/contribute";
+@import "components/staff";

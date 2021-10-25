@@ -42,9 +42,10 @@ body h2 {
 body p {
   font-family: Poppins;
   font-weight: normal;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
 }
 body section {
-  padding: 5% 10%;
+  padding: 5% 15%;
 }
 
 .title {
@@ -239,7 +240,6 @@ header .container .icons .icon:hover {
 }
 .infos {
   background-color: #e4d9ff;
-  padding: 5% 10%;
 }
 .infos .title {
   color: #ff8c42;
@@ -300,12 +300,16 @@ header .container .icons .icon:hover {
   background-size: cover;
 }
 
-.upper_waves {
+.upper-waves {
   background-image: url("../assets/images/spacers/nice_waves_upper.svg");
 }
 
-.lower_waves {
+.lower-waves {
   background-image: url("../assets/images/spacers/nice_waves_lower.svg");
+}
+
+.layered-steps {
+  background-image: url("../assets/images/spacers/nice_layered_steps.svg");
 }
 
 .stats {
@@ -419,6 +423,59 @@ header .container .icons .icon:hover {
   }
   .contribute .container .donors-container {
     width: 50%;
+  }
+}
+.staff {
+  background-color: #4e598c;
+}
+.staff .title {
+  color: #ff8c42;
+  text-align: right;
+}
+.staff .title::after {
+  right: 0;
+  background: #ff8c42;
+}
+.staff .container .sub-container {
+  margin: 2rem 0;
+}
+.staff .container .sub-container h2 {
+  text-transform: none;
+  color: #ff8c42;
+}
+.staff .container .sub-container p {
+  color: #e4d9ff;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
+  max-width: 32ch;
+}
+.staff .container .sub-container .profiles {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.staff .container .sub-container .profiles div {
+  text-align: center;
+}
+.staff .container .sub-container .profiles div img {
+  width: clamp(8rem, -0.875rem + 8.333vw, 8.3rem);
+}
+.staff .container .sub-container .profiles div h2 {
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
+  text-transform: none;
+  color: #e4d9ff;
+}
+
+@media screen and (min-width: 768px) {
+  .staff .container .sub-container .profiles {
+    justify-content: flex-start;
+  }
+  .staff .container .right {
+    text-align: right;
+  }
+  .staff .container .right .profiles {
+    justify-content: flex-end;
   }
 }
 

@@ -5,6 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="./assets/images/icons/icon.png"
+        />
         <title>La Boulangerie</title>
     </head>
     <body>
@@ -12,12 +17,12 @@
             <div class="container">
                 <img
                     class="icon"
-                    src="./assets/images/icon.svg"
+                    src="./assets/images/icons/icon.svg"
                     alt="Icône La Boulangerie"
                 />
                 <img
                     class="title"
-                    src="./assets/images/logo_text.svg"
+                    src="./assets/images/icons/logo_text.svg"
                     alt="Logo Text La Boulangerie"
                 />
                 <h2 class="subtitle">Une nouvelle aventure</h2>
@@ -68,7 +73,7 @@
         <div class="nav-container">
             <img
                 class="nav-icon"
-                src="./assets/images/icon.svg"
+                src="./assets/images/icons/icon.svg"
                 alt="Icône La Boulangerie"
             />
             <input type="checkbox" id="nav-toggle" class="nav-toggle" />
@@ -109,14 +114,14 @@
                     </p>
                 </div>
                 <div class="box-container">
-                    <div class="box">
+                    <div class="box" onclick="copyAddress()">
                         <h2>Jouer !</h2>
-                        <p>mc.laboulangerie.net</p>
+                        <p id="adress">mc.laboulangerie.net</p>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="spacer upper_waves"></div>
+        <div class="spacer upper-waves"></div>
         <section id="stats" class="stats">
             <h1 class="title">Stats</h1>
             <div class="container">
@@ -134,7 +139,7 @@
                 </div>
             </div>
         </section>
-        <div class="spacer lower_waves"></div>
+        <div class="spacer lower-waves"></div>
         <section id="contribute" class="contribute">
             <h1 class="title">Contribuer</h1>
             <div class="container">
@@ -158,6 +163,39 @@
                     </div>
                 </div>
                 <div id="donors" class="donors-container"></div>
+            </div>
+        </section>
+        <div class="spacer layered-steps"></div>
+        <section id="staff" class="staff">
+            <h1 class="title">Staff</h1>
+            <div class="container">
+                <div class="sub-container">
+                    <h2>Admins</h2>
+                    <p>Administration générale du projet</p>
+                    <div class="profiles" id="admins"></div>
+                </div>
+                <div class="sub-container right">
+                    <h2>Modérateurs</h2>
+                    <p>Modèrent la communauté pour en faire un espace serein</p>
+                    <div class="profiles" id="moderators"></div>
+                </div>
+                <div class="sub-container">
+                    <h2>Helpers</h2>
+                    <p>Apportent de l’aide aux joueurs</p>
+                    <div class="profiles" id="helpers"></div>
+                </div>
+                <div class="sub-container right">
+                    <h2>Builders</h2>
+                    <p>Construisent des univers</p>
+                    <div class="profiles" id="builders"></div>
+                </div>
+                <div class="sub-container">
+                    <h2>Développeurs</h2>
+                    <p>
+                        Programment des outils et de nouvelles fonctionnalités
+                    </p>
+                    <div class="profiles" id="developers"></div>
+                </div>
             </div>
         </section>
         <script type="module" src="./js/misc.js"></script>
