@@ -10,8 +10,8 @@ playersEl.textContent = await getPlayersSize();
 townsEl.textContent = await getTownsSize();
 nationsEl.textContent = await getNationsSize();
 
-profiles.forEach(async (profil) => {
+for (const profil of profiles) {
     document
-        .getElementById(profil.role + "s")
-        .appendChild(await generateProfile(profil.uuid));
-});
+        .getElementById(profil.group)
+        .appendChild(await generateProfile(profil));
+}
