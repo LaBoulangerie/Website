@@ -10,59 +10,64 @@
     }
 
     .container {
-        .sub-container {
-            margin: 2rem 0;
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        div {
+            flex: 1 0;
+            white-space: nowrap;
+
+            margin: 0 0.5rem;
+            text-align: center;
+
+            img {
+                width: clamp(8rem, -0.875rem + 8.333vw, 8.3rem);
+            }
 
             h2 {
+                font-family: Poppins;
+                font-weight: bold;
+                font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
                 text-transform: none;
-                color: colors.$mango-tango;
+                color: colors.$lavender-blue;
             }
 
             p {
-                color: colors.$lavender-blue;
-                font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
-                max-width: 32ch;
+                width: fit-content;
+                padding: 0.25rem 1.5rem;
+                display: inline-block;
+                font-family: Minercraftory;
+                text-transform: uppercase;
+                color: colors.$purple-navy;
             }
 
-            .profiles {
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
+            .admin {
+                background-color: colors.$mango-tango;
+            }
 
-                div {
-                    text-align: center;
+            .mod {
+                background-color: colors.$mod-color;
+            }
 
-                    img {
-                        width: clamp(8rem, -0.875rem + 8.333vw, 8.3rem);
-                    }
-                    h2 {
-                        font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
-                        text-transform: none;
-                        color: colors.$lavender-blue;
-                    }
-                }
+            .helper {
+                background-color: colors.$helper-color;
+            }
+
+            .builder {
+                background-color: colors.$builder-color;
+            }
+
+            .dev {
+                background-color: colors.$dev-color;
             }
         }
     }
 }
 
 @media screen and (min-width: 768px) {
-    .staff {
-        .container {
-            .sub-container {
-                .profiles {
-                    justify-content: flex-start;
-                }
-            }
-
-            .right {
-                text-align: right;
-                .profiles {
-                    justify-content: flex-end;
-                }
-            }
-        }
-    }
 }
