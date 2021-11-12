@@ -364,7 +364,6 @@ header .container .icons .icon:hover {
 .contribute .container {
   padding-top: 1rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
@@ -399,6 +398,7 @@ header .container .icons .icon:hover {
   gap: 2rem;
 }
 .contribute .container .donors-container div {
+  flex: 1 0;
   text-align: center;
 }
 .contribute .container .donors-container div img {
@@ -436,47 +436,53 @@ header .container .icons .icon:hover {
   right: 0;
   background: #ff8c42;
 }
-.staff .container .sub-container {
+.staff .container {
   margin: 2rem 0;
-}
-.staff .container .sub-container h2 {
-  text-transform: none;
-  color: #ff8c42;
-}
-.staff .container .sub-container p {
-  color: #e4d9ff;
-  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
-  max-width: 32ch;
-}
-.staff .container .sub-container .profiles {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-.staff .container .sub-container .profiles div {
+.staff .container div {
+  flex: 1 0;
+  white-space: nowrap;
+  margin: 0 0.5rem;
   text-align: center;
 }
-.staff .container .sub-container .profiles div img {
+.staff .container div img {
   width: clamp(8rem, -0.875rem + 8.333vw, 8.3rem);
 }
-.staff .container .sub-container .profiles div h2 {
+.staff .container div h2 {
+  font-family: Poppins;
+  font-weight: bold;
   font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
   text-transform: none;
   color: #e4d9ff;
 }
-
-@media screen and (min-width: 768px) {
-  .staff .container .sub-container .profiles {
-    justify-content: flex-start;
-  }
-  .staff .container .right {
-    text-align: right;
-  }
-  .staff .container .right .profiles {
-    justify-content: flex-end;
-  }
+.staff .container div p {
+  width: fit-content;
+  padding: 0.25rem 1.5rem;
+  display: inline-block;
+  font-family: Minercraftory;
+  text-transform: uppercase;
+  color: #4e598c;
+}
+.staff .container div .admin {
+  background-color: #ff8c42;
+}
+.staff .container div .mod {
+  background-color: #ca54ff;
+}
+.staff .container div .helper {
+  background-color: #2ecc71;
+}
+.staff .container div .builder {
+  background-color: #f1c40f;
+}
+.staff .container div .dev {
+  background-color: #1abc9c;
 }
 
 /*# sourceMappingURL=style.css.map */
