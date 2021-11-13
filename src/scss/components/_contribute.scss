@@ -63,9 +63,24 @@
                     width: clamp(6rem, -0.875rem + 8.333vw, 6.3rem);
                 }
                 h2 {
+                    font-family: Poppins;
+                    font-weight: bold;
                     font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
                     text-transform: none;
                     color: colors.$purple-navy;
+                }
+
+                p {
+                    width: fit-content;
+                    padding: 0.25rem 1.5rem;
+                    display: inline-block;
+                    font-family: Minercraftory;
+                    text-transform: uppercase;
+                    color: colors.$donor-color;
+                }
+
+                .donor {
+                    background-color: colors.$purple-navy;
                 }
             }
         }

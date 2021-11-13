@@ -264,7 +264,7 @@ header .container .icons .icon:hover {
   cursor: pointer;
   background-color: #4e598c;
   color: #ff8c42;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   margin: auto;
   margin-bottom: 1rem;
   font-size: clamp(1rem, -0.875rem + 8.333vw, 1.7rem);
@@ -405,9 +405,22 @@ header .container .icons .icon:hover {
   width: clamp(6rem, -0.875rem + 8.333vw, 6.3rem);
 }
 .contribute .container .donors-container div h2 {
+  font-family: Poppins;
+  font-weight: bold;
   font-size: clamp(1rem, -0.875rem + 8.333vw, 1.3rem);
   text-transform: none;
   color: #4e598c;
+}
+.contribute .container .donors-container div p {
+  width: fit-content;
+  padding: 0.25rem 1.5rem;
+  display: inline-block;
+  font-family: Minercraftory;
+  text-transform: uppercase;
+  color: #ffdf4f;
+}
+.contribute .container .donors-container div .donor {
+  background-color: #4e598c;
 }
 
 @media screen and (min-width: 768px) {
@@ -483,6 +496,22 @@ header .container .icons .icon:hover {
 }
 .staff .container div .dev {
   background-color: #1abc9c;
+}
+
+footer {
+  background-color: #e4d9ff;
+}
+footer div {
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+footer div p {
+  font-weight: bold;
+  color: #4e598c;
+}
+footer div p a {
+  color: #ff8c42;
 }
 
 /*# sourceMappingURL=style.css.map */

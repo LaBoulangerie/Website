@@ -15,3 +15,16 @@ for (const profil of profiles) {
         .getElementById(profil.group)
         .appendChild(await generateProfile(profil));
 }
+
+const copyAddress = async () => {
+    const adressEl = document.getElementById("adress");
+    const address = adressEl.textContent;
+
+    adressEl.textContent = "adresse copiée !";
+    setTimeout(() => (adressEl.textContent = address), 2000);
+
+    await navigator.clipboard.writeText(address);
+};
+
+const buttonEl = document.getElementById("copyButton");
+buttonEl.addEventListener("click", copyAddress);

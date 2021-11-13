@@ -30,9 +30,4 @@ const generateProfile = async (profile) => {
     return profileDiv;
 };
 
-const copyAddress = () => {
-    const adressEl = document.getElementById("adress");
-    navigator.clipboard.readText().then((clipText) => alert(clipText));
-};
-
-export { generateProfile, copyAddress };
+export { generateProfile };
