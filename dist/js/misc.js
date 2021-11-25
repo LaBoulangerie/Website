@@ -13,6 +13,7 @@ const generateProfile = async (profile) => {
 
     const headURL = URL.createObjectURL(headBlob);
     const headImg = document.createElement("img");
+    headImg.classList.add("head");
     headImg.src = headURL;
 
     const nameTitle = document.createElement("h2");

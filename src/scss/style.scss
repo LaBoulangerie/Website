@@ -47,6 +47,19 @@ body {
     }
 }
 
+@keyframes boing {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(5%);
+    }
+}
+
+.head:hover {
+    animation: boing 0.1s ease-in-out infinite alternate;
+}
+
 @import "components/header";
 @import "components/nav";
 @import "components/infos";
