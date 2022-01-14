@@ -1,4 +1,4 @@
-const baseUrl = "http://api.laboulangerie.net/"
+const baseUrl = "https://api.laboulangerie.net/"
 
 const getPlayersSize = async () => {
     return (await (await fetch(baseUrl + "players")).json()).length;
