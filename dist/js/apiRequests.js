@@ -1,13 +1,15 @@
+const baseUrl = "http://api.laboulangerie.net/"
+
 const getPlayersSize = async () => {
-    return (await (await fetch("http://api.lblg.cc/players")).json()).length;
+    return (await (await fetch(baseUrl + "players")).json()).length;
 };
 
 const getTownsSize = async () => {
-    return (await (await fetch("http://api.lblg.cc/towns")).json()).length;
+    return (await (await fetch(baseUrl + "towns")).json()).length;
 };
 
 const getNationsSize = async () => {
-    return (await (await fetch("http://api.lblg.cc/nations")).json()).length;
+    return (await (await fetch(baseUrl + "nations")).json()).length;
 };
 
 export { getPlayersSize, getTownsSize, getNationsSize };
