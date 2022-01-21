@@ -1,7 +1,7 @@
 const generateProfile = async (profile) => {
     const names = await (
         await fetch(
-            `https://api.lblg.cc/mojang/user/profiles/${profile.uuid}/names`
+            `https://api.laboulangerie.net/mojang/user/profiles/${profile.uuid}/names`
         )
     ).json();
 
