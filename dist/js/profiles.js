@@ -2,9 +2,8 @@ const profiles = [
     { uuid: "3ee833a1ce204057a5e2a85212ce8bbe", role: "admin", group: "staff" },
     { uuid: "e6ad501cbcd746d09e0fee6821ac6053", role: "admin", group: "staff" },
     { uuid: "afb8df8b1bad46f5826251809d8feca3", role: "mod", group: "staff" },
-    { uuid: "ad24c6ae0e5c4fbd9968ddd4d71ef640", role: "mod", group: "staff" },
     {
-        uuid: "19a9b1b7790244628848850373c53c8c",
+        uuid: "566b4d0347674e888d08f1902ef6940e",
         role: "builder",
         group: "staff",
     },
@@ -15,6 +14,7 @@ const profiles = [
     },
     { uuid: "58a6efe528de47a3bcf42752ae9f9f1e", role: "dev", group: "staff" },
     { uuid: "2154818603694e49bf41a5286638e66b", role: "dev", group: "staff" },
+    { uuid: "b8ef1c7615e04b958d474ca133561f5a", role: "dev", group: "staff" },
     {
         uuid: "143ed58be4ba4d05b1d0e23183a18654",
         role: "donor",
