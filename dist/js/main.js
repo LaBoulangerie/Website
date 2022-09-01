@@ -1,5 +1,4 @@
-// const utcSecondes = 1662822000;
-const utcSecondes = 1662053165;
+const utcSecondes = 1662822000;
 const date = new Date(0); // sets the date to epoch
 date.setUTCSeconds(utcSecondes);
 
