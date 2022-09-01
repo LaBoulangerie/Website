@@ -41,6 +41,7 @@ header {
 
         .countdown-container {
             h2 {
+                font-size: clamp(1rem, 2.5vw, 1.7rem);
                 color: colors.$mango-tango;
                 letter-spacing: 0.69em;
             }
@@ -48,7 +49,7 @@ header {
             #countdown {
                 color: colors.$lavender-blue;
                 font-family: SpaceMono;
-                font-size: clamp(8rem, 2.5vw, 8.7rem);
+                font-size: calc(3rem + 2.5vw);
                 font-style: bold;
                 text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
             }

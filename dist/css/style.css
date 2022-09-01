@@ -116,13 +116,14 @@ header .container div {
     text-align: center;
 }
 header .container .countdown-container h2 {
+    font-size: clamp(1rem, 2.5vw, 1.7rem);
     color: #ff8c42;
     letter-spacing: 0.69em;
 }
 header .container .countdown-container #countdown {
     color: #e4d9ff;
     font-family: SpaceMono;
-    font-size: clamp(8rem, 2.5vw, 8.7rem);
+    font-size: calc(3rem + 2.5vw);
     font-style: bold;
     text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
 }
