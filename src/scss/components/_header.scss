@@ -2,10 +2,10 @@ header {
     min-height: 100vh;
     background-image: linear-gradient(
             to bottom,
-            rgba(78, 89, 140, 0.35) 0%,
+            rgba(78, 89, 140, 0.25) 0%,
             colors.$purple-navy 100%
         ),
-        url("../../dist/assets/images/backgrounds/0.png");
+        url("../../dist/assets/images/backgrounds/gaiartos_bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -21,7 +21,7 @@ header {
         gap: max(5vh, 20px);
 
         .icon {
-            width: max(25%, 175px);
+            width: max(15%, 175px);
         }
 
         .title {
@@ -32,26 +32,56 @@ header {
             color: colors.$lavender-blue;
             font-size: clamp(1rem, 2.5vw, 1.7rem);
             letter-spacing: 0.69em;
-            padding: 0 1rem;
             text-align: center;
         }
 
-        .icons {
-            display: flex;
-            justify-content: space-around;
-            min-width: 100%;
-            padding: 0 max(10vw, 50px);
-            .icon {
-                width: min(10vw, 40px);
-                transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                // dont ask me about that, apparently this is the best way to color an svg lol
-                filter: invert(74%) sepia(72%) saturate(371%) hue-rotate(197deg) brightness(108%) contrast(103%);
+        div {
+            text-align: center;
+        }
 
-                &:hover {
-                    transform: scale(1.25, 1.25);
-                    // same here
-                    filter: invert(83%) sepia(93%) saturate(2270%) hue-rotate(312deg) brightness(98%) contrast(102%);
-                }
+        .countdown-container {
+            h2 {
+                color: colors.$mango-tango;
+                letter-spacing: 0.69em;
+            }
+
+            #countdown {
+                color: colors.$lavender-blue;
+                font-family: SpaceMono;
+                font-size: clamp(8rem, 2.5vw, 8.7rem);
+                font-style: bold;
+                text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
+            }
+
+            .ip {
+                text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
+                color: colors.$lavender-blue;
+                letter-spacing: 0.1em;
+                font-family: Minercraftory;
+                text-transform: lowercase;
+            }
+        }
+    }
+    .icons {
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+        justify-content: space-around;
+        left: 50%;
+        transform: translate(-50%, 0);
+        min-width: 50%;
+        .icon {
+            width: min(10vw, 40px);
+            transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            // dont ask me about that, apparently this is the best way to color an svg lol
+            filter: invert(74%) sepia(72%) saturate(371%) hue-rotate(197deg)
+                brightness(108%) contrast(103%);
+
+            &:hover {
+                transform: scale(1.25, 1.25);
+                // same here
+                filter: invert(83%) sepia(93%) saturate(2270%)
+                    hue-rotate(312deg) brightness(98%) contrast(102%);
             }
         }
     }

@@ -16,9 +16,9 @@ body {
     }
 
     h2 {
-        font-family: Minercraftory;
+        font-family: Poppins;
         text-transform: uppercase;
-        font-weight: normal;
+        font-weight: 800;
     }
 
     p {
@@ -61,10 +61,3 @@ body {
 }
 
 @import "components/header";
-@import "components/nav";
-@import "components/infos";
-@import "components/spacers";
-@import "components/stats";
-@import "components/contribute";
-@import "components/staff";
-@import "components/footer";

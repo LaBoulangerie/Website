@@ -1,30 +1,34 @@
-import { getPlayersSize, getTownsSize, getNationsSize } from "./apiRequests.js";
-import { generateProfile } from "./misc.js";
-import { profiles } from "./profiles.js";
+const utcSecondes = 1662822000;
+const date = new Date(0); // sets the date to epoch
+date.setUTCSeconds(utcSecondes);
 
-// const playersEl = document.getElementById("players");
-// const townsEl = document.getElementById("towns");
-// const nationsEl = document.getElementById("nations");
+const countdownEl = document.getElementById("countdown");
 
-// playersEl.textContent = await getPlayersSize();
-// townsEl.textContent = await getTownsSize();
-// nationsEl.textContent = await getNationsSize();
+const updateCountdown = () => {
+    const currentDate = new Date();
+    let diff = date - currentDate;
 
-for (const profil of profiles) {
-    document
-        .getElementById(profil.group)
-        .appendChild(await generateProfile(profil));
-}
+    if (diff < 0) diff = 0;
 
-const copyAddress = async () => {
-    const adressEl = document.getElementById("adress");
-    const address = adressEl.textContent;
+    let s, h, m, d;
 
-    adressEl.textContent = "adresse copiée !";
-    setTimeout(() => (adressEl.textContent = address), 2000);
+    diff /= 1000; // seconds
+    s = Math.floor(diff % 60);
 
-    await navigator.clipboard.writeText(address);
+    diff /= 60; // minutes
+    m = Math.floor(diff % 60);
+
+    diff /= 60; // hours
+    h = Math.floor(diff % 24);
+
+    diff /= 24; // days
+    d = Math.floor(diff);
+
+    const diffString = `${d}:${h < 10 ? "0" + h : h}:${m < 10 ? "0" + m : m}:${
+        s < 10 ? "0" + s : s
+    }`;
+
+    countdownEl.textContent = diffString;
 };
 
-const buttonEl = document.getElementById("copyButton");
-buttonEl.addEventListener("click", copyAddress);
+setInterval(updateCountdown, 1000);

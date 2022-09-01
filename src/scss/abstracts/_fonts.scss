@@ -22,7 +22,15 @@
 
 @font-face {
     font-family: Poppins;
-    src: url("../../../dist/assets/fonts/Poppins-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
+    src: url("../../../dist/assets/fonts/Poppins-ExtraBold.ttf")
+        format("truetype");
+    font-weight: 800;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: SpaceMono;
+    src: url("../../../dist/assets/fonts/SpaceMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: bold;
 }
