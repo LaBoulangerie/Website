@@ -53,12 +53,31 @@ header {
                 text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
             }
 
-            .ip {
+            #ip {
                 text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
                 color: colors.$lavender-blue;
                 letter-spacing: 0.1em;
                 font-family: Minercraftory;
                 text-transform: lowercase;
+            }
+
+            .swag {
+                background: linear-gradient(
+                    to left,
+                    colors.$mango-tango,
+                    colors.$gold-crayola
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: none !important;
+
+                &#ip {
+                    animation: hithere 1s ease infinite;
+                }
+
+                &#countdown {
+                    animation: pulse 0.5s infinite ease-in-out alternate;
+                }
             }
         }
     }
@@ -84,5 +103,33 @@ header {
                     hue-rotate(312deg) brightness(98%) contrast(102%);
             }
         }
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes hithere {
+    30% {
+        transform: scale(1.05);
+    }
+    40%,
+    60% {
+        transform: rotate(-10deg) scale(1.05);
+    }
+    50% {
+        transform: rotate(10deg) scale(1.05);
+    }
+    70% {
+        transform: rotate(0deg) scale(1.05);
+    }
+    100% {
+        transform: scale(1);
     }
 }

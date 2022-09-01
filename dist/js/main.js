@@ -1,14 +1,24 @@
-const utcSecondes = 1662822000;
+// const utcSecondes = 1662822000;
+const utcSecondes = 1662053165;
 const date = new Date(0); // sets the date to epoch
 date.setUTCSeconds(utcSecondes);
 
 const countdownEl = document.getElementById("countdown");
+const ipEl = document.getElementById("ip");
+let secondsInterval;
 
 const updateCountdown = () => {
     const currentDate = new Date();
     let diff = date - currentDate;
 
-    if (diff < 0) diff = 0;
+    if (diff < 0) {
+        diff = 0;
+
+        countdownEl.classList.add("swag");
+        ipEl.classList.add("swag");
+
+        clearInterval(secondsInterval);
+    }
 
     let s, h, m, d;
 
@@ -31,4 +41,4 @@ const updateCountdown = () => {
     countdownEl.textContent = diffString;
 };
 
-setInterval(updateCountdown, 1000);
+secondsInterval = setInterval(updateCountdown, 1000);

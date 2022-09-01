@@ -121,12 +121,24 @@ header .container .countdown-container #countdown {
   font-style: bold;
   text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
 }
-header .container .countdown-container .ip {
+header .container .countdown-container #ip {
   text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
   color: #e4d9ff;
   letter-spacing: 0.1em;
   font-family: Minercraftory;
   text-transform: lowercase;
+}
+header .container .countdown-container .swag {
+  background: linear-gradient(to left, #ff8c42, #f9c784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none !important;
+}
+header .container .countdown-container .swag#ip {
+  animation: hithere 1s ease infinite;
+}
+header .container .countdown-container .swag#countdown {
+  animation: pulse 0.5s infinite ease-in-out alternate;
 }
 header .icons {
   display: flex;
@@ -145,6 +157,32 @@ header .icons .icon {
 header .icons .icon:hover {
   transform: scale(1.25, 1.25);
   filter: invert(83%) sepia(93%) saturate(2270%) hue-rotate(312deg) brightness(98%) contrast(102%);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+@keyframes hithere {
+  30% {
+    transform: scale(1.05);
+  }
+  40%, 60% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
