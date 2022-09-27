@@ -39,57 +39,31 @@ header {
             text-align: center;
         }
 
-        .countdown-container {
-            h2 {
-                font-size: clamp(1rem, 2.5vw, 1.7rem);
-                color: colors.$mango-tango;
-                letter-spacing: 0.69em;
-            }
-
-            #countdown {
-                color: colors.$lavender-blue;
-                font-family: SpaceMono;
-                font-size: calc(3rem + 2.5vw);
-                font-style: bold;
-                text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
-            }
-
-            #ip {
-                text-shadow: 3px 7px 0px rgba(0, 0, 0, 0.29);
-                color: colors.$lavender-blue;
-                letter-spacing: 0.1em;
-                font-family: Minercraftory;
-                text-transform: lowercase;
-            }
-
-            .swag {
-                background: linear-gradient(
-                    to left,
-                    colors.$mango-tango,
-                    colors.$gold-crayola
-                );
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                text-shadow: none !important;
-
-                &#ip {
-                    animation: hithere 1s ease infinite;
-                }
-
-                &#countdown {
-                    animation: pulse 0.5s infinite ease-in-out alternate;
-                }
-            }
+        h1 {
+            background: linear-gradient(
+                to left,
+                colors.$mango-tango,
+                colors.$gold-crayola
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: none !important;
+            color: colors.$lavender-blue;
+            letter-spacing: 0.1em;
+            font-family: Minercraftory;
+            text-transform: lowercase;
+            font-size: clamp(1rem, 2.5vw, 1.7rem);
         }
     }
+
     .icons {
         display: flex;
         position: absolute;
-        bottom: 1rem;
+        bottom: 2rem;
         justify-content: space-around;
         left: 50%;
         transform: translate(-50%, 0);
-        min-width: 50%;
+        min-width: min(90vw, 50%);
         .icon {
             width: min(10vw, 40px);
             transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
