@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Minercraftory";
+        src: url("./assets/fonts/Minercraftory.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Alagard";
+        src: url("./assets/fonts/Alagard.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        src: url("./assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
