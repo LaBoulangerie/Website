@@ -10,6 +10,8 @@ module.exports = {
         extend: {
             backgroundImage: {
                 header: "url('./assets/images/main-bg.png')",
+                map: "url('./assets/images/map-bg.svg')",
+                gaiartos_map: 'url("./assets/images/gaiartos-map.png")',
             },
             colors: {
                 "purple-navy": "#4E598C",
