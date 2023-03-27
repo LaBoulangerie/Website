@@ -21,7 +21,7 @@ function Header() {
     ];
 
     return (
-        <div className="bg-header bg-[70%_50%] bg-cover h-full">
+        <div className="bg-header bg-[70%_50%] bg-cover h-screen">
             <div className="flex flex-col items-center justify-center h-full">
                 <img className="w-48 p-8 md:w-96" src={Baguette} alt="" />
                 <img className="w-64 p-1 md:w-[32rem]" src={Title} alt="" />
@@ -29,8 +29,8 @@ function Header() {
                     UNE NOUVELLE AVENTURE
                 </h1>
                 <div className="absolute flex gap-4 md:gap-8 bottom-4 md:bottom-8 fill-lavender-blue">
-                    {socials.map((social) => (
-                        <a href={social.link}>
+                    {socials.map((social, i) => (
+                        <a key={i} href={social.link}>
                             <FontAwesomeIcon
                                 icon={social.icon}
                                 color={"#E4D9FF"}

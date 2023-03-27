@@ -9,7 +9,7 @@ module.exports = {
         },
         extend: {
             backgroundImage: {
-                header: "url('./assets/images/background.png')",
+                header: "url('./assets/images/main-bg.png')",
             },
             colors: {
                 "purple-navy": "#4E598C",
