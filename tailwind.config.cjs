@@ -12,6 +12,7 @@ module.exports = {
                 header: "url('./assets/images/main-bg.png')",
                 map: "url('./assets/images/map-bg.svg')",
                 baguette: "url('./assets/images/baguette.svg')",
+                heart: "url('./assets/images/heart.svg')",
                 "gaiartos-map": 'url("./assets/images/gaiartos-map.png")',
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
             },
