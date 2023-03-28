@@ -12,7 +12,10 @@ function About() {
     }
 
     return (
-        <div className="p-6 md:px-[10vw] md:py-[5vh] overflow-hidden relative font-poppins bg-gradient-to-b from-[#EFE9FF] to-lavender-blue">
+        <section
+            id="play"
+            className="p-6 md:px-[10vw] md:py-[5vh] overflow-hidden relative font-poppins bg-gradient-to-b from-[#EFE9FF] to-lavender-blue"
+        >
             <div className="max-w-[1200px] m-auto">
                 <h1 className="text-4xl md:text-6xl text-mango-tango font-bold text-center md:text-left drop-shadow-md mt-4 mb-8">
                     C'EST QUOI ?
@@ -49,7 +52,7 @@ function About() {
                     src={TownBackground}
                 />
             </div>
-        </div>
+        </section>
     );
 }
 

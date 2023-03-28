@@ -28,7 +28,7 @@ function Footer() {
     const mail = "contact@laboulangerie.net";
 
     return (
-        <div className="bg-gradient-to-br from-[#334079] to-purple-navy">
+        <footer className="bg-gradient-to-br from-[#334079] to-purple-navy">
             <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins">
                 <div className="max-w-[1200px] m-auto opacity-50 text-lavender-blue text-center md:text-left flex flex-col md:flex-row place-content-evenly items-center">
                     <div className="bg-baguette bg-center bg-[length:40%] bg-no-repeat">
@@ -82,7 +82,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
 

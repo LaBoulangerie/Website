@@ -41,7 +41,10 @@ function Donors() {
     }, []);
 
     return (
-        <div className="font-poppins bg-gradient-to-br from-lavender-blue to-[#9CAAE8]">
+        <section
+            id="donate"
+            className="font-poppins bg-gradient-to-br from-lavender-blue to-[#9CAAE8]"
+        >
             <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins bg-heart bg-center bg-cover md:bg-[110%_10%] md:bg-[length:60%] bg-no-repeat">
                 <div className="max-w-[1200px] m-auto">
                     <h1 className="text-4xl md:text-6xl text-mango-tango font-bold text-center md:text-left drop-shadow-md mt-4 mb-8">
@@ -84,7 +87,7 @@ function Donors() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

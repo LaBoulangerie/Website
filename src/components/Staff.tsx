@@ -63,7 +63,7 @@ function Staff() {
     }, []);
 
     return (
-        <div className="bg-gradient-radial from-mango-tango to-[#FFA66C]">
+        <section id="staff" className="bg-gradient-radial from-mango-tango to-[#FFA66C]">
             <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins bg-baguette bg-center bg-[length:50%] bg-no-repeat">
                 <div className="max-w-[1200px] m-auto">
                     <h1 className="text-4xl md:text-6xl text-purple-navy font-bold text-center drop-shadow-md">
@@ -101,7 +101,7 @@ function Staff() {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

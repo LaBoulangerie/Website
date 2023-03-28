@@ -4,7 +4,7 @@ import GaiartosMap from "../assets/images/gaiartos-map.png";
 
 function Map() {
     return (
-        <div className="bg-gradient-to-br from-[#5668BC] to-purple-navy">
+        <section id="map" className="bg-gradient-to-br from-[#5668BC] to-purple-navy">
             <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins bg-map bg-cover bg-center">
                 <div className="max-w-[1200px] m-auto">
                     <div className="flex flex-col md:flex-row-reverse md:items-center">
@@ -40,7 +40,7 @@ function Map() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
