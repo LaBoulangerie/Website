@@ -1,3 +1,5 @@
+import { faHandshake } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { components } from "../utils/api/api";
 import fetcher from "../utils/api/fetcher";
@@ -49,6 +51,10 @@ function Staff() {
             });
     }
 
+    function toTheApplyPageYouGo() {
+        location.href = "https://laboulangerie.net/apply";
+    }
+
     useEffect(() => {
         getStaffList().then((staffList) => {
             for (const staff of staffList) {
@@ -64,10 +70,10 @@ function Staff() {
         <div className="bg-gradient-radial from-mango-tango to-[#FFA66C]">
             <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins bg-baguette bg-center bg-[length:50%] bg-no-repeat">
                 <div className="max-w-[1200px] m-auto">
-                    <h1 className="text-4xl md:text-6xl text-purple-navy font-bold text-center drop-shadow-md mt-4 mb-8">
+                    <h1 className="text-4xl md:text-6xl text-purple-navy font-bold text-center drop-shadow-md">
                         L'ÉQUIPE
                     </h1>
-                    <div className="w-full flex flex-wrap">
+                    <div className="w-full flex flex-wrap m-4">
                         {staffList.map((staff) => (
                             <div
                                 key={staff.uuid}
@@ -88,6 +94,12 @@ function Staff() {
                             </div>
                         ))}
                     </div>
+                    <button
+                        className="text-purple-navy font-bold bg-gold-crayola py-1 px-2 rounded-lg drop-shadow-md block mx-auto hover:scale-110 active:scale-90 transition-all"
+                        onClick={toTheApplyPageYouGo}
+                    >
+                        <FontAwesomeIcon icon={faHandshake} /> On recrute
+                    </button>
                 </div>
             </div>
         </div>
