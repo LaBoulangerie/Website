@@ -73,17 +73,17 @@ function Staff() {
                         {staffList.map((staff) => (
                             <div
                                 key={staff.uuid}
-                                className="bg-purple-navy w-48 mx-auto my-4 p-4 text-center drop-shadow-lg rounded-xl flex flex-col items-center content-center"
+                                className="bg-purple-navy w-32 md:w-48 mx-auto my-4 p-4 text-center drop-shadow-lg rounded-xl flex flex-col items-center content-center"
                             >
                                 <img src={headUrls[staff.uuid as keyof typeof headUrls]} alt="" />
                                 <p className="font-bold text-lavender-blue">{staff.name}</p>
                                 <div
                                     className={
-                                        "px-2 py-1 w-32 rounded-full bg-gradient-to-r " +
+                                        "px-2 py-1 w-24 md:w-32 rounded-full bg-gradient-to-r " +
                                         tags[staff.type as keyof typeof tags].colors.join(" ")
                                     }
                                 >
-                                    <p className="font-bold text-lavender-blue">
+                                    <p className="font-bold text-lavender-blue text-xs md:text-base">
                                         {tags[staff.type as keyof typeof tags].name}
                                     </p>
                                 </div>
