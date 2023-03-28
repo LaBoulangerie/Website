@@ -3,10 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GaiartosMap from "../assets/images/gaiartos-map.png";
 
 function Map() {
-    function toTheMapYouGo() {
-        location.href = "https://laboulangerie.net/map";
-    }
-
     return (
         <div className="bg-gradient-to-br from-[#5668BC] to-purple-navy">
             <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins bg-map bg-cover">
@@ -36,7 +32,7 @@ function Map() {
                             </div>
                             <button
                                 className="text-purple-navy font-bold bg-gold-crayola py-1 px-2 rounded-lg drop-shadow-md block mx-auto mt-[-16px] mb-4 hover:scale-110 active:scale-90 transition-all"
-                                onClick={toTheMapYouGo}
+                                onClick={() => (location.href = "https://laboulangerie.net/map")}
                             >
                                 <FontAwesomeIcon icon={faCompass} /> Map dynamique
                             </button>

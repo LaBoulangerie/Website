@@ -51,10 +51,6 @@ function Staff() {
             });
     }
 
-    function toTheApplyPageYouGo() {
-        location.href = "https://laboulangerie.net/apply";
-    }
-
     useEffect(() => {
         getStaffList().then((staffList) => {
             for (const staff of staffList) {
@@ -96,7 +92,7 @@ function Staff() {
                     </div>
                     <button
                         className="text-purple-navy font-bold bg-gold-crayola py-1 px-2 rounded-lg drop-shadow-md block mx-auto hover:scale-110 active:scale-90 transition-all"
-                        onClick={toTheApplyPageYouGo}
+                        onClick={() => (location.href = "https://laboulangerie.net/apply")}
                     >
                         <FontAwesomeIcon icon={faHandshake} /> On recrute
                     </button>
