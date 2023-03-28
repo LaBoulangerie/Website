@@ -69,7 +69,7 @@ function Staff() {
                     <h1 className="text-4xl md:text-6xl text-purple-navy font-bold text-center drop-shadow-md">
                         L'ÉQUIPE
                     </h1>
-                    <div className="w-full flex flex-wrap m-4">
+                    <div className="w-full flex flex-wrap my-4">
                         {staffList.map((staff) => (
                             <div
                                 key={staff.uuid}
