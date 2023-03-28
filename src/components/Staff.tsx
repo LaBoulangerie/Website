@@ -73,7 +73,7 @@ function Staff() {
                         {staffList.map((staff) => (
                             <div
                                 key={staff.uuid}
-                                className="bg-purple-navy w-32 md:w-48 mx-auto my-4 p-4 text-center drop-shadow-lg rounded-xl flex flex-col items-center content-center"
+                                className="bg-purple-navy w-32 md:w-48 mx-auto my-4 p-4 text-center drop-shadow-lg rounded-xl flex flex-col items-center content-center hover:rotate-3 transition-all"
                             >
                                 <img
                                     src={headUrls[staff.uuid as keyof typeof headUrls]}

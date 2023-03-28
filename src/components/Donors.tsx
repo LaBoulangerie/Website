@@ -75,11 +75,21 @@ function Donors() {
                             </h1>
                             <div className="flex flex-wrap place-content-evenly">
                                 {donorList.map((donor) => (
-                                    <div key={donor.uuid} className="w-24 p-2">
+                                    <div
+                                        key={donor.uuid}
+                                        className="w-24 p-2 flex flex-col items-center content-center"
+                                    >
                                         <img
+                                            className="hover:scale-110 transition-all peer"
                                             src={faceUrls[donor.uuid as keyof typeof faceUrls]}
                                             alt={`Tête de ${donor.name}`}
                                         />
+                                        <p className="text-center peer-hover:hidden text-purple-navy">
+                                            {donor.type}€
+                                        </p>
+                                        <p className="text-center hidden peer-hover:block text-purple-navy">
+                                            {donor.name}
+                                        </p>
                                     </div>
                                 ))}
                             </div>

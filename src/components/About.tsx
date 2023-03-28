@@ -37,7 +37,7 @@ function About() {
                         </p>
                     </div>
                     <button
-                        className="relative flex-shrink-0 z-[1] bg-gradient-to-br from-purple-navy to-mango-tango rounded-2xl py-4 px-10 m-auto before:z-[-1] before:blur-lg before:rounded-2xl before:bg-gradient-to-br before:from-purple-navy before:to-mango-tango before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 block hover:scale-110 active:scale-90 transition-all"
+                        className="relative flex-shrink-0 z-[1] bg-gradient-to-br from-purple-navy to-mango-tango rounded-2xl py-4 px-10 m-auto before:z-[-1] before:blur-lg before:rounded-2xl before:bg-gradient-to-br before:from-purple-navy before:to-mango-tango before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 block hover:scale-110 hover:rotate-6 active:scale-90 transition-all"
                         onClick={copyAdress}
                     >
                         <h1 className="text-4xl text-lavender-blue font-extrabold">JOUER !</h1>
