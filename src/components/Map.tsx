@@ -27,7 +27,7 @@ function Map() {
                             </div>
                         </div>
                         <div>
-                            <div className="relative before:bg-[length:100%_100%] before:h-full before:w-full before:blur-lg before:bg-gaiartos_map before:absolute before:inline-block">
+                            <div className="relative before:bg-[length:100%_100%] before:h-full before:w-full before:blur-lg before:bg-gaiartos-map before:absolute before:inline-block">
                                 <img
                                     className="drop-shadow-md"
                                     src={GaiartosMap}
