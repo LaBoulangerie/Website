@@ -54,11 +54,15 @@ function NavBar() {
             <div className="max-w-[1200px] m-auto">
                 <div className="flex items-center content-center">
                     <a href="#home">
-                        <img
-                            className="w-12"
-                            src={frames[currentFrameIndex]}
-                            alt="La bonne baguette"
-                        />
+                        {frames.map((frame, i) => (
+                            <img
+                                key={i}
+                                className="w-12"
+                                src={frame}
+                                alt="La bonne baguette"
+                                hidden={i != currentFrameIndex}
+                            />
+                        ))}
                     </a>
                     <ul className="text-lavender-blue tracking-widest font-miner flex items-center content-center place-content-evenly w-full">
                         <li className="hover:opacity-70 transition-all">
