@@ -7,17 +7,17 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Baguette from "../assets/images/baguette.png";
-import Title from "../assets/images/title.png";
+import Baguette from "../assets/images/baguette.webp";
+import Title from "../assets/images/title.webp";
 
 function Header() {
     const socials = [
-        { link: "https://laboulangerie.net/discord", icon: faDiscord },
-        { link: "https://laboulangerie.net/twitter", icon: faTwitter },
-        { link: "https://laboulangerie.net/youtube", icon: faYoutube },
-        { link: "https://laboulangerie.net/github", icon: faGithub },
-        { link: "https://laboulangerie.net/tiktok", icon: faTiktok },
-        { link: "https://laboulangerie.net/wiki", icon: faBook },
+        { name: "Discord", link: "https://laboulangerie.net/discord", icon: faDiscord },
+        { name: "Twitter", link: "https://laboulangerie.net/twitter", icon: faTwitter },
+        { name: "YouTube", link: "https://laboulangerie.net/youtube", icon: faYoutube },
+        { name: "GitHub", link: "https://laboulangerie.net/github", icon: faGithub },
+        { name: "TikTok", link: "https://laboulangerie.net/tiktok", icon: faTiktok },
+        { name: "Wiki", link: "https://laboulangerie.net/wiki", icon: faBook },
     ];
 
     return (
@@ -30,13 +30,20 @@ function Header() {
                 </h1>
                 <div className="absolute flex gap-4 md:gap-8 bottom-4 md:bottom-8 fill-lavender-blue">
                     {socials.map((social, i) => (
-                        <a key={i} href={social.link}>
+                        <button
+                            key={i}
+                            onClick={() => (location.href = social.link)}
+                            aria-labelledby={`label-${social.name}-h`}
+                        >
                             <FontAwesomeIcon
                                 icon={social.icon}
                                 color={"#E4D9FF"}
                                 className="hover:text-yellow-orange hover:scale-125 transition-all ease-in-out text-3xl md:text-5xl"
                             />
-                        </a>
+                            <span id={`label-${social.name}-h`} hidden>
+                                Lien vers {social.name}
+                            </span>
+                        </button>
                     ))}
                 </div>
             </div>

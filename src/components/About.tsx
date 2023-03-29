@@ -50,6 +50,7 @@ function About() {
                     className="absolute left-0 right-0 bottom-5 m-auto scale-150 opacity-20 select-none"
                     draggable={false}
                     src={TownBackground}
+                    alt="Silhouette de ville en arrière plan"
                 />
             </div>
         </section>

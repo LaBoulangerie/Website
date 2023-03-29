@@ -63,7 +63,7 @@ function Donors() {
                                 utilisée pour et seulement pour le projet La Boulangerie.
                             </p>
                             <button
-                                className="text-purple-navy font-bold bg-gold-crayola py-1 px-2 rounded-lg drop-shadow-md block mt-8 hover:scale-110 active:scale-90 transition-all"
+                                className="bg-purple-navy font-bold text-lavender-blue py-1 px-2 rounded-lg drop-shadow-md block mt-8 hover:scale-110 active:scale-90 transition-all"
                                 onClick={() => (location.href = "https://laboulangerie.net/donate")}
                             >
                                 <FontAwesomeIcon icon={faHeart} /> Faire un don

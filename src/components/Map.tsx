@@ -1,6 +1,6 @@
 import { faCompass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import GaiartosMap from "../assets/images/gaiartos-map.png";
+import GaiartosMap from "../assets/images/gaiartos-map.webp";
 
 function Map() {
     return (

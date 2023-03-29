@@ -1,15 +1,15 @@
-import F1 from "../assets/images/gif/1.png";
-import F2 from "../assets/images/gif/2.png";
-import F3 from "../assets/images/gif/3.png";
-import F4 from "../assets/images/gif/4.png";
-import F5 from "../assets/images/gif/5.png";
-import F6 from "../assets/images/gif/6.png";
-import F7 from "../assets/images/gif/7.png";
-import F8 from "../assets/images/gif/8.png";
-import F9 from "../assets/images/gif/9.png";
-import F10 from "../assets/images/gif/10.png";
-import F11 from "../assets/images/gif/11.png";
-import F12 from "../assets/images/gif/12.png";
+import F1 from "../assets/images/gif/1.webp";
+import F2 from "../assets/images/gif/2.webp";
+import F3 from "../assets/images/gif/3.webp";
+import F4 from "../assets/images/gif/4.webp";
+import F5 from "../assets/images/gif/5.webp";
+import F6 from "../assets/images/gif/6.webp";
+import F7 from "../assets/images/gif/7.webp";
+import F8 from "../assets/images/gif/8.webp";
+import F9 from "../assets/images/gif/9.webp";
+import F10 from "../assets/images/gif/10.webp";
+import F11 from "../assets/images/gif/11.webp";
+import F12 from "../assets/images/gif/12.webp";
 import { useEffect, useState } from "react";
 
 function NavBar() {

@@ -17,12 +17,12 @@ function Footer() {
     ];
 
     const socials = [
-        { link: "https://laboulangerie.net/discord", icon: faDiscord },
-        { link: "https://laboulangerie.net/twitter", icon: faTwitter },
-        { link: "https://laboulangerie.net/youtube", icon: faYoutube },
-        { link: "https://laboulangerie.net/github", icon: faGithub },
-        { link: "https://laboulangerie.net/tiktok", icon: faTiktok },
-        { link: "https://laboulangerie.net/wiki", icon: faBook },
+        { name: "Discord", link: "https://laboulangerie.net/discord", icon: faDiscord },
+        { name: "Twitter", link: "https://laboulangerie.net/twitter", icon: faTwitter },
+        { name: "YouTube", link: "https://laboulangerie.net/youtube", icon: faYoutube },
+        { name: "GitHub", link: "https://laboulangerie.net/github", icon: faGithub },
+        { name: "TikTok", link: "https://laboulangerie.net/tiktok", icon: faTiktok },
+        { name: "Wiki", link: "https://laboulangerie.net/wiki", icon: faBook },
     ];
 
     const mail = "contact@laboulangerie.net";
@@ -70,13 +70,20 @@ function Footer() {
 
                         <div className="flex gap-4 place-content-evenly bottom-0">
                             {socials.map((social, i) => (
-                                <a key={i} href={social.link}>
+                                <button
+                                    key={i}
+                                    onClick={() => (location.href = social.link)}
+                                    aria-labelledby={`label-${social.name}-f`}
+                                >
                                     <FontAwesomeIcon
                                         icon={social.icon}
                                         color={"#E4D9FF"}
                                         className="hover:text-yellow-orange hover:scale-125 transition-all ease-in-out text-3xl"
                                     />
-                                </a>
+                                    <span id={`label-${social.name}-f`} hidden>
+                                        Lien vers {social.name}
+                                    </span>
+                                </button>
                             ))}
                         </div>
                     </div>

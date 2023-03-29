@@ -9,11 +9,11 @@ module.exports = {
         },
         extend: {
             backgroundImage: {
-                header: "url('./assets/images/main-bg.png')",
+                header: "url('./assets/images/main-bg.webp')",
                 map: "url('./assets/images/map-bg.svg')",
                 baguette: "url('./assets/images/baguette.svg')",
                 heart: "url('./assets/images/heart.svg')",
-                "gaiartos-map": 'url("./assets/images/gaiartos-map.png")',
+                "gaiartos-map": 'url("./assets/images/gaiartos-map.webp")',
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
             },
             colors: {
