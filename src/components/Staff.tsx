@@ -32,6 +32,10 @@ function Staff() {
             name: "INTERVENANT",
             colors: ["from-tag-contributor-1", "to-tag-contributor-2"],
         },
+        multi: {
+            name: "MULTI-TÂCHE",
+            colors: ["from-tag-multi-1", "to-tag-multi-2"],
+        },
     };
 
     async function getStaffList() {

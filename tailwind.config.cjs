@@ -34,6 +34,8 @@ module.exports = {
                 "tag-scenar-2": "#2C29D1",
                 "tag-contributor-1": "#007E51",
                 "tag-contributor-2": "#01A7BD",
+                "tag-multi-1": "#c94b4b",
+                "tag-multi-2": "#4b134f",
             },
         },
     },
