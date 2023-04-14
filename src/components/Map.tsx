@@ -33,7 +33,7 @@ function Map() {
                                 />
                             </div>
                             <button
-                                className="text-purple-navy font-bold bg-gold-crayola py-1 px-2 rounded-lg drop-shadow-md block mx-auto mt-[-16px] mb-4 hover:scale-110 active:scale-90 transition-all"
+                                className="text-[#4B5586] font-bold bg-gold-crayola py-1 px-2 rounded-lg drop-shadow-md block mx-auto mt-[-16px] mb-4 hover:scale-110 active:scale-90 transition-all"
                                 onClick={() => (location.href = "https://laboulangerie.net/map")}
                             >
                                 <FontAwesomeIcon icon={faCompass} /> Map dynamique
