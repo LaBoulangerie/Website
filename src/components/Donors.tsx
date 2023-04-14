@@ -83,6 +83,8 @@ function Donors() {
                                             className="hover:scale-110 transition-all peer"
                                             src={faceUrls[donor.uuid as keyof typeof faceUrls]}
                                             alt={`Tête de ${donor.name}`}
+                                            width={80}
+                                            height={80}
                                         />
                                         <p className="text-center peer-hover:hidden text-purple-navy">
                                             {donor.type}€

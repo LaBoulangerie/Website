@@ -61,6 +61,8 @@ function NavBar() {
                                 src={frame}
                                 alt="La bonne baguette"
                                 hidden={i != currentFrameIndex}
+                                width={46}
+                                height={46}
                             />
                         ))}
                     </a>

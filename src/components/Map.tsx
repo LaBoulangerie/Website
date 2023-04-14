@@ -28,6 +28,8 @@ function Map() {
                                     className="drop-shadow-md"
                                     src={GaiartosMap}
                                     alt="Carte de Gaiartos"
+                                    width={1696}
+                                    height={954}
                                 />
                             </div>
                             <button

@@ -23,8 +23,20 @@ function Header() {
     return (
         <header id="home" className="bg-header bg-[70%_50%] bg-cover h-screen">
             <div className="flex flex-col items-center justify-center h-full">
-                <img className="w-48 p-8 md:w-96" src={Baguette} alt="La bonne baguette" />
-                <img className="w-64 p-1 md:w-[32rem]" src={Title} alt="Logo La Boulangerie" />
+                <img
+                    className="w-48 p-8 md:w-96"
+                    src={Baguette}
+                    alt="La bonne baguette"
+                    width={192}
+                    height={190}
+                />
+                <img
+                    className="w-64 p-1 md:w-[32rem]"
+                    src={Title}
+                    alt="Logo La Boulangerie"
+                    width={512}
+                    height={73}
+                />
                 <h1 className="font-miner text-lavender-blue text-center tracking-widest p-2 md:text-xl">
                     UNE NOUVELLE AVENTURE
                 </h1>

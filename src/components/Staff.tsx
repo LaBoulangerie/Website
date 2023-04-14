@@ -82,6 +82,8 @@ function Staff() {
                                 <img
                                     src={headUrls[staff.uuid as keyof typeof headUrls]}
                                     alt={`Tête de ${staff.name}`}
+                                    width={160}
+                                    height={160}
                                 />
                                 <p className="font-bold text-lavender-blue">{staff.name}</p>
                                 <div
