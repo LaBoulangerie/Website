@@ -29,8 +29,8 @@ function Footer() {
 
     return (
         <footer className="bg-gradient-to-br from-[#334079] to-purple-navy">
-            <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins">
-                <div className="max-w-[1200px] m-auto opacity-50 text-lavender-blue text-center md:text-left flex flex-col md:flex-row place-content-evenly items-center">
+            <div className="p-6 md:px-[10vw] md:py-[5vh] relative font-poppins text-lavender-blue text-center opacity-50">
+                <div className="max-w-[1200px] m-auto md:text-left flex flex-col md:flex-row place-content-evenly items-center">
                     <div className="bg-baguette bg-center bg-[length:40%] bg-no-repeat">
                         <h1 className="font-alagard">La Boulangerie</h1>
                         <div className="my-2">
@@ -87,6 +87,12 @@ function Footer() {
                             ))}
                         </div>
                     </div>
+                </div>
+                <div className="my-4">
+                    <p className="text-center text-xs">
+                        NOT AN OFFICIAL MINECRAFT SERVER. NOT APPROVED BY OR ASSOCIATED WITH MOJANG
+                        OR MICROSOFT
+                    </p>
                 </div>
             </div>
         </footer>
