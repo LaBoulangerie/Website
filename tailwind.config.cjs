@@ -36,6 +36,8 @@ module.exports = {
                 "tag-contributor-2": "#01A7BD",
                 "tag-multi-1": "#c94b4b",
                 "tag-multi-2": "#4b134f",
+                "tag-cm-1": "#e81e63",
+                "tag-cm-2": "#9c27b0",
             },
         },
     },

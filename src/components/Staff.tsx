@@ -36,6 +36,10 @@ function Staff() {
             name: "MULTI-TÂCHE",
             colors: ["from-tag-multi-1", "to-tag-multi-2"],
         },
+        cm: {
+            name: "CM",
+            colors: ["from-tag-cm-1", "to-tag-cm-2"],
+        },
     };
 
     async function getStaffList() {
