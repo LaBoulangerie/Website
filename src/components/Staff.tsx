@@ -16,9 +16,17 @@ function Staff() {
             name: "MODO",
             colors: ["from-tag-mod-1", "to-tag-mod-2"],
         },
+        multi: {
+            name: "MULTI-TÂCHE",
+            colors: ["from-tag-multi-1", "to-tag-multi-2"],
+        },
         dev: {
             name: "DEV",
             colors: ["from-tag-dev-1", "to-tag-dev-2"],
+        },
+        cm: {
+            name: "CM",
+            colors: ["from-tag-cm-1", "to-tag-cm-2"],
         },
         builder: {
             name: "BUILDER",
@@ -31,14 +39,6 @@ function Staff() {
         contributor: {
             name: "INTERVENANT",
             colors: ["from-tag-contributor-1", "to-tag-contributor-2"],
-        },
-        multi: {
-            name: "MULTI-TÂCHE",
-            colors: ["from-tag-multi-1", "to-tag-multi-2"],
-        },
-        cm: {
-            name: "CM",
-            colors: ["from-tag-cm-1", "to-tag-cm-2"],
         },
     };
 
@@ -65,6 +65,13 @@ function Staff() {
                 if (!staff.uuid) continue;
                 setHeadUrl(staff.uuid);
             }
+
+            const keys = Object.keys(tags);
+            staffList.sort(
+                (a, b) =>
+                    keys.indexOf(a.type as keyof typeof tags) -
+                    keys.indexOf(b.type as keyof typeof tags)
+            );
 
             setStaffList(staffList);
         });
