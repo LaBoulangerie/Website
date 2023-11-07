@@ -32,6 +32,8 @@ module.exports = {
                 "tag-builder-2": "#FFBB61",
                 "tag-scenar-1": "#13A1DE",
                 "tag-scenar-2": "#2C29D1",
+                "tag-illu-1": "#5575cc",
+                "tag-illu-2": "#2c4eab",
                 "tag-contributor-1": "#007E51",
                 "tag-contributor-2": "#01A7BD",
                 "tag-multi-1": "#c94b4b",

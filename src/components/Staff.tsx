@@ -24,6 +24,10 @@ function Staff() {
             name: "DEV",
             colors: ["from-tag-dev-1", "to-tag-dev-2"],
         },
+        illu: {
+            name: "ILLUSTRATEUR",
+            colors: ["from-tag-illu-1", "to-tag-illu-2"],
+        },
         cm: {
             name: "CM",
             colors: ["from-tag-cm-1", "to-tag-cm-2"],
