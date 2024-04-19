@@ -1,15 +1,27 @@
 import { faCheck, faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TownBackground from "../assets/images/town-bg.svg";
+import fetcher from "../utils/api/fetcher";
+
 function About() {
     const [icon, setIcon] = useState(faCopy);
+    const [serverVersion, setServerVersion] = useState("");
 
     function copyAdress() {
         navigator.clipboard.writeText("mc.laboulangerie.net");
         setIcon(faCheck);
         setTimeout(() => setIcon(faCopy), 1000);
     }
+
+    async function getServerVersion() {
+        const request = fetcher.path("/server").method("get").create();
+        return (await request({})).data["bukkitVersion"]?.split("-")[0];
+    }
+
+    useEffect(() => {
+        getServerVersion().then((version) => setServerVersion(version || ""));
+    }, []);
 
     return (
         <section
@@ -42,7 +54,7 @@ function About() {
                     >
                         <h1 className="text-4xl text-lavender-blue font-extrabold">JOUER !</h1>
                         <p className="text-[8px] text-lavender-blue font-bold">
-                            <FontAwesomeIcon icon={icon} /> MC.LABOULANGERIE.NET [1.19]
+                            <FontAwesomeIcon icon={icon} /> MC.LABOULANGERIE.NET [{serverVersion}]
                         </p>
                     </button>
                 </div>
