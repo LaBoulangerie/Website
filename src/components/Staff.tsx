@@ -52,7 +52,7 @@ function Staff() {
     }
 
     function setHeadUrl(uuid: string) {
-        const imgURL = `https://visage.surgeplay.com/head/${uuid}.png`;
+        const imgURL = `https://vzge.me/head/${uuid}.png`;
 
         fetch(imgURL)
             .then((response) => response.blob())

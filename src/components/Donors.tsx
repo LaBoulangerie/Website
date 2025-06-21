@@ -14,7 +14,7 @@ function Donors() {
     }
 
     function setFaceUrl(uuid: string) {
-        const imgURL = `https://visage.surgeplay.com/face/${uuid}.png`;
+        const imgURL = `https://vzge.me/face/${uuid}.png`;
 
         fetch(imgURL)
             .then((response) => response.blob())
