@@ -3,331 +3,618 @@
  * Do not make direct changes to the file.
  */
 
-
 export interface paths {
-  "/staff": {
-    /** @description Get staff members */
-    get: operations["getStaff"];
-  };
-  "/search/{query}": {
-    /** @description Search for player, town or nation by name */
-    get: operations["search"];
-  };
-  "/player": {
-    /** @description Get all players */
-    get: operations["getPlayers"];
-  };
-  "/player/{identifier}": {
-    /** @description Get player with name or UUID */
-    get: operations["getPlayer"];
-  };
-  "/town": {
-    /** @description Get all towns */
-    get: operations["getTowns"];
-  };
-  "/town/{identifier}": {
-    /** @description Get town with name or UUID */
-    get: operations["getTown"];
-  };
-  "/donors": {
-    /** @description Get donors */
-    get: operations["getDonors"];
-  };
-  "/server": {
-    /** @description Get server informations */
-    get: operations["getServer"];
-  };
-  "/nation": {
-    /** @description Get all nations */
-    get: operations["getNations"];
-  };
-  "/nation/{identifier}": {
-    /** @description Get nation with name or UUID */
-    get: operations["getNation"];
-  };
+    "/staff": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get staff members */
+        get: operations["getStaff"];
+        put?: never;
+        /** @description Add staff */
+        post: operations["addStaff"];
+        /** @description Delete staff */
+        delete: operations["deleteStaff"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/search/{query}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Search for player, land or nation by name */
+        get: operations["search"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/player": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get all players */
+        get: operations["getPlayers"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/player/{identifier}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get player with name or UUID */
+        get: operations["getPlayer"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/donors": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get donors */
+        get: operations["getDonors"];
+        put?: never;
+        /** @description Add donor */
+        post: operations["addDonor"];
+        /** @description Delete donor */
+        delete: operations["deleteDonor"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/land": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get all lands */
+        get: operations["getLands"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/land/{identifier}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get land with name or ULID */
+        get: operations["getLand"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/vote": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get all vote sites */
+        get: operations["getVotes"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/nation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get all nations */
+        get: operations["getNations"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/nation/{identifier}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get nation with name or UUID */
+        get: operations["getNation"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/server": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description Get server informations */
+        get: operations["getServer"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
-
 export type webhooks = Record<string, never>;
-
 export interface components {
-  schemas: {
-    TypedNameUuidModel: {
-      name?: string;
-      uuid?: string;
-      type?: string;
+    schemas: {
+        TypedNameIdModel: {
+            name?: string;
+            id?: string;
+            type?: string;
+        };
+        NameIdModel: {
+            name?: string;
+            id?: string;
+        };
+        NotFoundResponse: Record<string, never>;
+        PlayerModel: {
+            name?: string;
+            uuid?: string;
+            /** Format: int64 */
+            firstPlayed: number;
+            /** Format: int64 */
+            lastSeen: number;
+            isOnline?: boolean;
+            resident?: components["schemas"]["ResidentModel"];
+            mmo?: components["schemas"]["MmoModel"];
+        };
+        LandModel: {
+            name?: string;
+            ulid?: string;
+            nation?: components["schemas"]["NameIdModel"];
+            mayor?: components["schemas"]["NameIdModel"];
+            titleMessage?: string;
+            levelName?: string;
+            /** Format: int32 */
+            balance: number;
+            color?: string;
+            residents?: components["schemas"]["NameIdModel"][];
+            spawn?: components["schemas"]["CoordinatesModel"];
+            chunksCoordinates?: components["schemas"]["CoordinatesModel"][];
+            enemies?: components["schemas"]["NameIdModel"][];
+            allies?: components["schemas"]["NameIdModel"][];
+        };
+        NationModel: {
+            name?: string;
+            ulid?: string;
+            king?: components["schemas"]["NameIdModel"];
+            capital?: components["schemas"]["NameIdModel"];
+            /** Format: int32 */
+            balance: number;
+            color?: string;
+            lands?: components["schemas"]["NameIdModel"][];
+            enemies?: components["schemas"]["NameIdModel"][];
+            allies?: components["schemas"]["NameIdModel"][];
+        };
+        ServerModel: {
+            name?: string;
+            motd?: string;
+            version?: string;
+            bukkitVersion?: string;
+            tps?: string;
+            /** Format: int32 */
+            maxPlayers: number;
+            onlinePlayers?: components["schemas"]["NameIdModel"][];
+        };
+        ResidentModel: {
+            land?: components["schemas"]["NameIdModel"];
+            nation?: components["schemas"]["NameIdModel"];
+            isMayor?: boolean;
+            isKing?: boolean;
+            roleName?: string;
+            /** Format: int32 */
+            balance: number;
+        };
+        MmoModel: {
+            /** Format: int32 */
+            palier: number;
+            talents?: components["schemas"]["TalentModel"][];
+        };
+        CoordinatesModel: {
+            /** Format: double */
+            x: number;
+            /** Format: double */
+            y: number;
+            /** Format: double */
+            z: number;
+            type?: string;
+            world?: string;
+        };
+        TalentModel: {
+            name?: string;
+            /** Format: int32 */
+            level: number;
+            /** Format: double */
+            xp: number;
+            /** Format: double */
+            xpToNextLevel: number;
+            /** Format: double */
+            minLevelXp: number;
+        };
     };
-    NameUuidModel: {
-      name?: string;
-      uuid?: string;
-    };
-    NotFoundResponse: Record<string, never>;
-    PlayerModel: {
-      name?: string;
-      uuid?: string;
-      /** Format: int64 */
-      firstPlayed: number;
-      /** Format: int64 */
-      lastSeen: number;
-      isOnline?: boolean;
-      resident?: components["schemas"]["ResidentModel"];
-      mmo?: components["schemas"]["MmoModel"];
-    };
-    TownModel: {
-      name?: string;
-      uuid?: string;
-      nation?: components["schemas"]["NameUuidModel"];
-      /** Format: int64 */
-      joinedNationAt: number;
-      mayor?: components["schemas"]["NameUuidModel"];
-      board?: string;
-      tag?: string;
-      formattedName?: string;
-      /** Format: int64 */
-      registered: number;
-      /** Format: int32 */
-      balance: number;
-      mapColor?: string;
-      residents?: (components["schemas"]["NameUuidModel"])[];
-      spawn?: components["schemas"]["CoordinatesModel"];
-      townBlocks?: (components["schemas"]["CoordinatesModel"])[];
-      isNeutral?: boolean;
-      isOpen?: boolean;
-      isPublic?: boolean;
-    };
-    ServerModel: {
-      name?: string;
-      motd?: string;
-      version?: string;
-      bukkitVersion?: string;
-      tps?: string;
-      /** Format: int32 */
-      maxPlayers: number;
-      onlinePlayers?: (components["schemas"]["NameUuidModel"])[];
-    };
-    NationModel: {
-      name?: string;
-      uuid?: string;
-      king?: components["schemas"]["NameUuidModel"];
-      capital?: components["schemas"]["NameUuidModel"];
-      board?: string;
-      tag?: string;
-      formattedName?: string;
-      /** Format: int64 */
-      registered: number;
-      /** Format: int32 */
-      balance: number;
-      mapColor?: string;
-      towns?: (components["schemas"]["NameUuidModel"])[];
-      residents?: (components["schemas"]["NameUuidModel"])[];
-      enemies?: (components["schemas"]["NameUuidModel"])[];
-      allies?: (components["schemas"]["NameUuidModel"])[];
-      spawn?: components["schemas"]["CoordinatesModel"];
-      isNeutral?: boolean;
-      isOpen?: boolean;
-      isPublic?: boolean;
-    };
-    ResidentModel: {
-      town?: components["schemas"]["NameUuidModel"];
-      nation?: components["schemas"]["NameUuidModel"];
-      friends?: (components["schemas"]["NameUuidModel"])[];
-      isMayor?: boolean;
-      isKing?: boolean;
-      townRanks?: (string)[];
-      nationRanks?: (string)[];
-      surname?: string;
-      title?: string;
-      prefix?: string;
-      postfix?: string;
-      formattedName?: string;
-    };
-    MmoModel: {
-      /** Format: int32 */
-      palier: number;
-      talents?: (components["schemas"]["TalentModel"])[];
-    };
-    CoordinatesModel: {
-      /** Format: double */
-      x: number;
-      /** Format: double */
-      y: number;
-      /** Format: double */
-      z: number;
-      type?: string;
-      world?: string;
-    };
-    TalentModel: {
-      name?: string;
-      /** Format: int32 */
-      level: number;
-      /** Format: double */
-      xp: number;
-      /** Format: double */
-      xpToNextLevel: number;
-      /** Format: double */
-      minLevelXp: number;
-    };
-  };
-  responses: never;
-  parameters: never;
-  requestBodies: never;
-  headers: never;
-  pathItems: never;
+    responses: never;
+    parameters: never;
+    requestBodies: never;
+    headers: never;
+    pathItems: never;
 }
-
-export type external = Record<string, never>;
-
+export type $defs = Record<string, never>;
 export interface operations {
-
-  getStaff: {
-    /** @description Get staff members */
-    responses: {
-      /** @description Staff members */
-      200: {
-        content: {
-          "application/json": (components["schemas"]["TypedNameUuidModel"])[];
+    getStaff: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
         };
-      };
-    };
-  };
-  search: {
-    /** @description Search for player, town or nation by name */
-    parameters: {
-        /** @description Search query */
-      path: {
-        query: string;
-      };
-    };
-    responses: {
-      /** @description Query results */
-      200: {
-        content: {
-          "application/json": (components["schemas"]["NameUuidModel"])[];
+        requestBody?: never;
+        responses: {
+            /** @description Staff members */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TypedNameIdModel"][];
+                };
+            };
         };
-      };
     };
-  };
-  getPlayers: {
-    /** @description Get all players */
-    responses: {
-      /** @description All players */
-      200: {
-        content: {
-          "application/json": (components["schemas"]["NameUuidModel"])[];
+    addStaff: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
         };
-      };
-    };
-  };
-  getPlayer: {
-    /** @description Get player with name or UUID */
-    parameters: {
-        /** @description Name or UUID of the player */
-      path: {
-        identifier: string;
-      };
-    };
-    responses: {
-      /** @description Player */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PlayerModel"];
+        requestBody?: {
+            content: {
+                "application/json": components["schemas"]["TypedNameIdModel"];
+            };
         };
-      };
-      /** @description Player not found */
-      404: {
-        content: {
-          "application/json": components["schemas"]["NotFoundResponse"];
-        };
-      };
+        responses: never;
     };
-  };
-  getTowns: {
-    /** @description Get all towns */
-    responses: {
-      /** @description All towns */
-      200: {
-        content: {
-          "application/json": (components["schemas"]["NameUuidModel"])[];
+    deleteStaff: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
         };
-      };
-    };
-  };
-  getTown: {
-    /** @description Get town with name or UUID */
-    parameters: {
-        /** @description Name or UUID of the town */
-      path: {
-        identifier: string;
-      };
-    };
-    responses: {
-      /** @description Town */
-      200: {
-        content: {
-          "application/json": components["schemas"]["TownModel"];
+        requestBody?: {
+            content: {
+                "application/json": components["schemas"]["TypedNameIdModel"];
+            };
         };
-      };
-      /** @description Town not found */
-      404: {
-        content: {
-          "application/json": components["schemas"]["NotFoundResponse"];
-        };
-      };
+        responses: never;
     };
-  };
-  getDonors: {
-    /** @description Get donors */
-    responses: {
-      /** @description Donors */
-      200: {
-        content: {
-          "application/json": (components["schemas"]["TypedNameUuidModel"])[];
+    search: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Search query */
+                query: string;
+            };
+            cookie?: never;
         };
-      };
-    };
-  };
-  getServer: {
-    /** @description Get server informations */
-    responses: {
-      /** @description Server informations */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ServerModel"];
+        requestBody?: never;
+        responses: {
+            /** @description Query results */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NameIdModel"][];
+                };
+            };
         };
-      };
     };
-  };
-  getNations: {
-    /** @description Get all nations */
-    responses: {
-      /** @description All nations */
-      200: {
-        content: {
-          "application/json": (components["schemas"]["NameUuidModel"])[];
+    getPlayers: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
         };
-      };
-    };
-  };
-  getNation: {
-    /** @description Get nation with name or UUID */
-    parameters: {
-        /** @description Name or UUID of the nation */
-      path: {
-        identifier: string;
-      };
-    };
-    responses: {
-      /** @description Nation */
-      200: {
-        content: {
-          "application/json": components["schemas"]["NationModel"];
+        requestBody?: never;
+        responses: {
+            /** @description All players */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NameIdModel"][];
+                };
+            };
         };
-      };
-      /** @description Nation not found */
-      404: {
-        content: {
-          "application/json": components["schemas"]["NotFoundResponse"];
-        };
-      };
     };
-  };
+    getPlayer: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Name or UUID of the player */
+                identifier: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Player */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PlayerModel"];
+                };
+            };
+            /** @description Player not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NotFoundResponse"];
+                };
+            };
+        };
+    };
+    getDonors: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Donors */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TypedNameIdModel"][];
+                };
+            };
+        };
+    };
+    addDonor: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": components["schemas"]["TypedNameIdModel"];
+            };
+        };
+        responses: never;
+    };
+    deleteDonor: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": components["schemas"]["TypedNameIdModel"];
+            };
+        };
+        responses: never;
+    };
+    getLands: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description All lands */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NameIdModel"][];
+                };
+            };
+        };
+    };
+    getLand: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Name or ULID of the land */
+                identifier: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Land */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["LandModel"];
+                };
+            };
+            /** @description Land not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NotFoundResponse"];
+                };
+            };
+        };
+    };
+    getVotes: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Vote URLs */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": string[];
+                };
+            };
+        };
+    };
+    getNations: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description All nations */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NameIdModel"][];
+                };
+            };
+        };
+    };
+    getNation: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Name or UUID of the nation */
+                identifier: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Nation */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NationModel"];
+                };
+            };
+            /** @description Nation not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NotFoundResponse"];
+                };
+            };
+        };
+    };
+    getServer: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Server informations */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ServerModel"];
+                };
+            };
+        };
+    };
 }

@@ -5,36 +5,22 @@ import { components } from "../utils/api/api";
 import fetcher from "../utils/api/fetcher";
 
 function Donors() {
-    const [donorList, setDonorList] = useState<components["schemas"]["TypedNameUuidModel"][]>([]);
-    const [faceUrls, setFaceUrls] = useState<{ [key: string]: string }>({});
+    const [donorList, setDonorList] = useState<components["schemas"]["TypedNameIdModel"][]>([]);
 
     async function getDonorList() {
         const request = fetcher.path("/donors").method("get").create();
-        return (await request({})).data;
+        return (await request(undefined)).data;
     }
 
-    function setFaceUrl(uuid: string) {
-        const imgURL = `https://vzge.me/face/${uuid}.png`;
-
-        fetch(imgURL)
-            .then((response) => response.blob())
-            .then((imageBlob) => {
-                const imageObjectURL = URL.createObjectURL(imageBlob);
-                faceUrls[uuid] = imageObjectURL;
-                setFaceUrls({ ...faceUrls });
-            });
-    }
+    const getFaceUrl = (uuid: string) => `https://vzge.me/face/${uuid}.png`;
 
     useEffect(() => {
         getDonorList().then((donorList) => {
-            for (const donor of donorList) {
-                if (!donor.uuid) continue;
-                setFaceUrl(donor.uuid);
-            }
-
             const donorListSortedByAmount = donorList.sort((a, b) =>
                 a.type && b.type ? parseFloat(b.type) - parseFloat(a.type) : 0
             );
+
+            console.log(donorListSortedByAmount);
 
             setDonorList(donorListSortedByAmount);
         });
@@ -76,12 +62,12 @@ function Donors() {
                             <div className="flex flex-wrap place-content-evenly">
                                 {donorList.map((donor) => (
                                     <div
-                                        key={donor.uuid}
+                                        key={donor.id}
                                         className="w-24 p-2 flex flex-col items-center content-center"
                                     >
                                         <img
                                             className="hover:scale-110 transition-all peer"
-                                            src={faceUrls[donor.uuid as keyof typeof faceUrls]}
+                                            src={getFaceUrl(donor.id ?? "")}
                                             alt={`Tête de ${donor.name}`}
                                             width={80}
                                             height={80}

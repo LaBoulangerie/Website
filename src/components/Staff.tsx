@@ -5,7 +5,7 @@ import { components } from "../utils/api/api";
 import fetcher from "../utils/api/fetcher";
 
 function Staff() {
-    const [staffList, setStaffList] = useState<components["schemas"]["TypedNameUuidModel"][]>([]);
+    const [staffList, setStaffList] = useState<components["schemas"]["TypedNameIdModel"][]>([]);
     const [headUrls, setHeadUrls] = useState<{ [key: string]: string }>({});
     const tags = {
         owner: {
@@ -48,7 +48,7 @@ function Staff() {
 
     async function getStaffList() {
         const request = fetcher.path("/staff").method("get").create();
-        return (await request({})).data;
+        return (await request(undefined)).data;
     }
 
     function setHeadUrl(uuid: string) {
@@ -66,8 +66,8 @@ function Staff() {
     useEffect(() => {
         getStaffList().then((staffList) => {
             for (const staff of staffList) {
-                if (!staff.uuid) continue;
-                setHeadUrl(staff.uuid);
+                if (!staff.id) continue;
+                setHeadUrl(staff.id);
             }
 
             const keys = Object.keys(tags);
@@ -91,11 +91,11 @@ function Staff() {
                     <div className="w-full flex flex-wrap my-4">
                         {staffList.map((staff) => (
                             <div
-                                key={staff.uuid}
+                                key={staff.id}
                                 className="bg-purple-navy w-32 md:w-48 mx-auto my-4 p-4 text-center drop-shadow-lg rounded-xl flex flex-col items-center content-center hover:rotate-3 transition-all"
                             >
                                 <img
-                                    src={headUrls[staff.uuid as keyof typeof headUrls]}
+                                    src={headUrls[staff.id as keyof typeof headUrls]}
                                     alt={`Tête de ${staff.name}`}
                                     width={160}
                                     height={160}
