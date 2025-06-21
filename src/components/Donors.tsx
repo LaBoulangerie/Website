@@ -20,8 +20,6 @@ function Donors() {
                 a.type && b.type ? parseFloat(b.type) - parseFloat(a.type) : 0
             );
 
-            console.log(donorListSortedByAmount);
-
             setDonorList(donorListSortedByAmount);
         });
     }, []);
