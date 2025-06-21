@@ -16,7 +16,7 @@ function About() {
 
     async function getServerVersion() {
         const request = fetcher.path("/server").method("get").create();
-        return (await request({})).data["bukkitVersion"]?.split("-")[0];
+        return (await request(undefined)).data["bukkitVersion"]?.split("-")[0];
     }
 
     useEffect(() => {
